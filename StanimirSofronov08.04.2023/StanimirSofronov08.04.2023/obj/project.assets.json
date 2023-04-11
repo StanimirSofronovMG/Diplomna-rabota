@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\admin\\source\\repos\\StanimirSofronov08.04.2023\\StanimirSofronov08.04.2023\\StanimirSofronov08.04.2023.csproj",
+      "projectUniqueName": "C:\\Diplomna\\Diplomna-rabota\\StanimirSofronov08.04.2023\\StanimirSofronov08.04.2023\\StanimirSofronov08.04.2023.csproj",
       "projectName": "StanimirSofronov08.04.2023",
-      "projectPath": "C:\\Users\\admin\\source\\repos\\StanimirSofronov08.04.2023\\StanimirSofronov08.04.2023\\StanimirSofronov08.04.2023.csproj",
+      "projectPath": "C:\\Diplomna\\Diplomna-rabota\\StanimirSofronov08.04.2023\\StanimirSofronov08.04.2023\\StanimirSofronov08.04.2023.csproj",
       "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\admin\\source\\repos\\StanimirSofronov08.04.2023\\StanimirSofronov08.04.2023\\obj\\",
+      "outputPath": "C:\\Diplomna\\Diplomna-rabota\\StanimirSofronov08.04.2023\\StanimirSofronov08.04.2023\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",

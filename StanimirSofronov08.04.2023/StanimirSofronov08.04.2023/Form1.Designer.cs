@@ -28,28 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            txtUsername = new TextBox();
+            txtPassword = new TextBox();
             label1 = new Label();
             label2 = new Label();
             button1 = new Button();
             SuspendLayout();
             // 
-            // textBox1
+            // txtUsername
             // 
-            textBox1.Location = new Point(184, 67);
-            textBox1.Margin = new Padding(4);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(467, 29);
-            textBox1.TabIndex = 0;
+            txtUsername.Location = new Point(184, 67);
+            txtUsername.Margin = new Padding(4);
+            txtUsername.Name = "txtUsername";
+            txtUsername.Size = new Size(467, 29);
+            txtUsername.TabIndex = 0;
             // 
-            // textBox2
+            // txtPassword
             // 
-            textBox2.Location = new Point(184, 108);
-            textBox2.Margin = new Padding(4);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(467, 29);
-            textBox2.TabIndex = 1;
+            txtPassword.Location = new Point(184, 108);
+            txtPassword.Margin = new Padding(4);
+            txtPassword.Name = "txtPassword";
+            txtPassword.Size = new Size(467, 29);
+            txtPassword.TabIndex = 1;
             // 
             // label1
             // 
@@ -78,6 +78,7 @@
             button1.TabIndex = 4;
             button1.Text = "Вход";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // Form1
             // 
@@ -87,8 +88,8 @@
             Controls.Add(button1);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(txtPassword);
+            Controls.Add(txtUsername);
             Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             Margin = new Padding(4);
             Name = "Form1";
@@ -99,8 +100,8 @@
 
         #endregion
 
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox txtUsername;
+        private TextBox txtPassword;
         private Label label1;
         private Label label2;
         private Button button1;

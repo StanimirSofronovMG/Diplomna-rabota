@@ -31,5 +31,16 @@ namespace StanimirSofronov08._04._2023
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            new Form1().Show();
+            this.Close();
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }
