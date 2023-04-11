@@ -7,17 +7,17 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace DataLayer
 {
-    public partial class UsersContext : DbContext
+    public partial class RestaurantContext : DbContext
     {
         // Package Manager Console -> Default project: DataLayer
         // - > run following to create new migration: add-migration TheMigrationName
         // - > run the following to update the database: update-database
 
-        public UsersContext()
+        public RestaurantContext()
         {
         }
 
-        public UsersContext(DbContextOptions<UsersContext> options)
+        public RestaurantContext(DbContextOptions<RestaurantContext> options)
             : base(options)
         {
         }
@@ -42,7 +42,7 @@ namespace DataLayer
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server=DESKTOP-GQFK145;Database=Users;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer("Server=DESKTOP-JARQ3N6;Database=RestaurantDb;Trusted_Connection=True;");
             }
         }
 

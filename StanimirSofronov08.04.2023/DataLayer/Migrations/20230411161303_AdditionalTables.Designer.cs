@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DataLayer.Migrations
 {
-    [DbContext(typeof(UsersContext))]
+    [DbContext(typeof(RestaurantContext))]
     [Migration("20230411161303_AdditionalTables")]
     partial class AdditionalTables
     {

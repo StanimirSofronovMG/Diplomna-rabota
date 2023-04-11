@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DataLayer.Migrations
 {
-    [DbContext(typeof(UsersContext))]
+    [DbContext(typeof(RestaurantContext))]
     [Migration("20230411150644_MyFirstMigration")]
     partial class MyFirstMigration
     {
