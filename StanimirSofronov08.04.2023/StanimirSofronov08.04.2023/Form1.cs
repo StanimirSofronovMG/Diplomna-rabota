@@ -9,7 +9,12 @@ namespace StanimirSofronov08._04._2023
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(txtUsername.Text=="Stanimir" && txtPassword.Text=="123456" )
+            //var userEntity = context.User.FirstOrDefault(user => user.Name == txtUsername.Text && user.Passwrod == txtPassword.Text)
+            // userEntity = null -> not founbd in the db -> show error
+            // userEntity not null -> ok continue
+
+
+            if (txtUsername.Text=="Stanimir" && txtPassword.Text=="123456" )
             {
                 new Form2().Show();
                 this.Hide();
