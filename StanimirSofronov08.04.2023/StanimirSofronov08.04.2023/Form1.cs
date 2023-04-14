@@ -1,4 +1,5 @@
 using DataLayer;
+using Microsoft.EntityFrameworkCore;
 using System.ComponentModel;
 
 namespace StanimirSofronov08._04._2023
@@ -18,9 +19,24 @@ namespace StanimirSofronov08._04._2023
             // userEntity = null -> not founbd in the db -> show error
             // userEntity not null -> ok continue
 
-            var userEntity = _context!.Users.ToList();
+            var userEntity = _context!.Users.Include(u => u.Role)
+                .FirstOrDefault(u => u.UserName == txtUsername.Text && u.Password == txtPassword.Text);
+            
+            if(userEntity == null)
+            {
+                MessageBox.Show("Потребителското име или паролата са грешни. Опитайте отново");
+                txtUsername.Clear();
+                txtPassword.Clear();
+            }
+            else if (userEntity.Role.RoleName=="Admin")
+            {
+                new Form2(true).Show();
+                this.Hide();
+            }
+            
 
-            if (txtUsername.Text == "Stanimir" && txtPassword.Text == "123456")
+
+         /*   if (txtUsername.Text == "Stanimir" && txtPassword.Text == "123456")
             {
                 new Form2().Show();
                 this.Hide();
@@ -30,7 +46,7 @@ namespace StanimirSofronov08._04._2023
                 MessageBox.Show("Потребителското име или паролата са грешни. Опитайте отново");
                 txtUsername.Clear();
                 txtPassword.Clear();
-            }
+            }*/
         }
 
         protected override void OnLoad(EventArgs e)

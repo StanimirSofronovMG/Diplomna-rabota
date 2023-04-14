@@ -72,3 +72,4 @@ C:\Diplomna\Diplomna-rabota\StanimirSofronov08.04.2023\StanimirSofronov08.04.202
 C:\Diplomna\Diplomna-rabota\StanimirSofronov08.04.2023\StanimirSofronov08.04.2023\bin\Debug\net6.0-windows\DataLayer.pdb
 C:\Diplomna\Diplomna-rabota\StanimirSofronov08.04.2023\StanimirSofronov08.04.2023\bin\Debug\net6.0-windows\BusinessLayer.pdb
 C:\Diplomna\Diplomna-rabota\StanimirSofronov08.04.2023\StanimirSofronov08.04.2023\obj\Debug\net6.0-windows\StanimirSofronov08.04.2023.csproj.CopyComplete
+C:\Diplomna\Diplomna-rabota\StanimirSofronov08.04.2023\StanimirSofronov08.04.2023\obj\Debug\net6.0-windows\StanimirSofronov08._04._2023.addEmployee.resources

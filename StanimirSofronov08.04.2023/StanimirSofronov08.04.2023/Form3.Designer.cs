@@ -35,6 +35,7 @@
             изберетеОпцияToolStripMenuItem = new ToolStripMenuItem();
             toolStripMenuItem1 = new ToolStripMenuItem();
             закъсненияБонусиToolStripMenuItem = new ToolStripMenuItem();
+            добавянеНаСлужителToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -59,7 +60,7 @@
             // 
             // изберетеОпцияToolStripMenuItem
             // 
-            изберетеОпцияToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { toolStripMenuItem1, закъсненияБонусиToolStripMenuItem });
+            изберетеОпцияToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { toolStripMenuItem1, закъсненияБонусиToolStripMenuItem, добавянеНаСлужителToolStripMenuItem });
             изберетеОпцияToolStripMenuItem.Name = "изберетеОпцияToolStripMenuItem";
             изберетеОпцияToolStripMenuItem.Size = new Size(107, 20);
             изберетеОпцияToolStripMenuItem.Text = "Изберете опция";
@@ -67,14 +68,21 @@
             // toolStripMenuItem1
             // 
             toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(138, 22);
+            toolStripMenuItem1.Size = new Size(199, 22);
             toolStripMenuItem1.Text = "Резервации";
             // 
             // закъсненияБонусиToolStripMenuItem
             // 
             закъсненияБонусиToolStripMenuItem.Name = "закъсненияБонусиToolStripMenuItem";
-            закъсненияБонусиToolStripMenuItem.Size = new Size(185, 22);
+            закъсненияБонусиToolStripMenuItem.Size = new Size(199, 22);
             закъсненияБонусиToolStripMenuItem.Text = "Закъснения, бонуси";
+            // 
+            // добавянеНаСлужителToolStripMenuItem
+            // 
+            добавянеНаСлужителToolStripMenuItem.Name = "добавянеНаСлужителToolStripMenuItem";
+            добавянеНаСлужителToolStripMenuItem.Size = new Size(199, 22);
+            добавянеНаСлужителToolStripMenuItem.Text = "Добавяне на служител";
+            добавянеНаСлужителToolStripMenuItem.Click += добавянеНаСлужителToolStripMenuItem_Click;
             // 
             // Form3
             // 
@@ -100,5 +108,6 @@
         private ToolStripMenuItem изберетеОпцияToolStripMenuItem;
         private ToolStripMenuItem toolStripMenuItem1;
         private ToolStripMenuItem закъсненияБонусиToolStripMenuItem;
+        private ToolStripMenuItem добавянеНаСлужителToolStripMenuItem;
     }
 }

@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             panel1 = new Panel();
+            comboBox1 = new ComboBox();
             listBox6 = new ListBox();
             listBox5 = new ListBox();
             listBox4 = new ListBox();
@@ -44,6 +45,7 @@
             pictureBox1 = new PictureBox();
             dateTimePicker1 = new DateTimePicker();
             menuStrip1 = new MenuStrip();
+            tToolStripMenuItem = new ToolStripMenuItem();
             button1 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
@@ -52,11 +54,13 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(255, 255, 128);
+            panel1.Controls.Add(comboBox1);
             panel1.Controls.Add(listBox6);
             panel1.Controls.Add(listBox5);
             panel1.Controls.Add(listBox4);
@@ -73,6 +77,17 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(624, 380);
             panel1.TabIndex = 0;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Mariika", "Ivan" });
+            comboBox1.Location = new Point(58, 76);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(121, 23);
+            comboBox1.TabIndex = 12;
+            comboBox1.Visible = false;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // listBox6
             // 
@@ -157,6 +172,7 @@
             pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox4.TabIndex = 3;
             pictureBox4.TabStop = false;
+            pictureBox4.Click += pictureBox4_Click;
             // 
             // pictureBox3
             // 
@@ -187,6 +203,7 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click_1;
             // 
             // dateTimePicker1
             // 
@@ -198,12 +215,20 @@
             // 
             // menuStrip1
             // 
+            menuStrip1.Items.AddRange(new ToolStripItem[] { tToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(800, 24);
             menuStrip1.TabIndex = 2;
             menuStrip1.Text = "menuStrip1";
             menuStrip1.ItemClicked += menuStrip1_ItemClicked;
+            // 
+            // tToolStripMenuItem
+            // 
+            tToolStripMenuItem.Name = "tToolStripMenuItem";
+            tToolStripMenuItem.Size = new Size(155, 20);
+            tToolStripMenuItem.Text = "tДобавяне на служители";
+            tToolStripMenuItem.Click += tToolStripMenuItem_Click;
             // 
             // button1
             // 
@@ -234,6 +259,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -256,5 +283,7 @@
         private ListBox listBox2;
         private ListBox listBox1;
         private Button button1;
+        private ComboBox comboBox1;
+        private ToolStripMenuItem tToolStripMenuItem;
     }
 }

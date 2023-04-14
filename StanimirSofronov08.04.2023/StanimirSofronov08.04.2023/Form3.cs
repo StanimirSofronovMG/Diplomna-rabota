@@ -21,5 +21,10 @@ namespace StanimirSofronov08._04._2023
         {
 
         }
+
+        private void добавянеНаСлужителToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new addEmployee().Show();
+        }
     }
 }

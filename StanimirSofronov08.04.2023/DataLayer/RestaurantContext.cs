@@ -74,7 +74,13 @@ namespace DataLayer
                 entity.Property(e => e.RoleName)
                     .HasMaxLength(50)
                     .IsUnicode(false);
+
+                entity.HasMany(r => r.Users)
+                    .WithOne(u => u.Role)
+                    .HasForeignKey(u => u.UserId);
+                  //  .HasConstraintName("FK_Users_Roles");
             });
+
 
             modelBuilder.Entity<User>(entity =>
             {
@@ -95,8 +101,8 @@ namespace DataLayer
 
                 entity.HasOne(d => d.Role)
                     .WithMany(p => p.Users)
-                    .HasForeignKey(d => d.RoleId)
-                    .HasConstraintName("FK_Users_Roles");
+                    .HasForeignKey(d => d.RoleId);
+                 //   .HasConstraintName("FK_Users_Roles");
             });
 
             modelBuilder.Entity<UserVacation>(entity =>
