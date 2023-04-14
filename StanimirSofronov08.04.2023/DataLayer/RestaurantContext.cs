@@ -78,7 +78,7 @@ namespace DataLayer
                 entity.HasMany(r => r.Users)
                     .WithOne(u => u.Role)
                     .HasForeignKey(u => u.UserId);
-                  //  .HasConstraintName("FK_Users_Roles");
+                //  .HasConstraintName("FK_Users_Roles");
             });
 
 
@@ -102,7 +102,7 @@ namespace DataLayer
                 entity.HasOne(d => d.Role)
                     .WithMany(p => p.Users)
                     .HasForeignKey(d => d.RoleId);
-                 //   .HasConstraintName("FK_Users_Roles");
+                //   .HasConstraintName("FK_Users_Roles");
             });
 
             modelBuilder.Entity<UserVacation>(entity =>
@@ -127,6 +127,16 @@ namespace DataLayer
 
                 entity.Property(e => e.IsInside);
             });
+            modelBuilder.Entity<Table>().HasData(
+                  new Table { TableId = 1, SeatCount = 6, IsInside = true },
+                  new Table { TableId = 2, SeatCount = 6, IsInside = true },
+                  new Table { TableId = 3, SeatCount = 6, IsInside = true },
+                  new Table { TableId = 4, SeatCount = 6, IsInside = true },
+                  new Table { TableId = 5, SeatCount = 6, IsInside = true },
+                  new Table { TableId = 6, SeatCount = 6, IsInside = true }
+                );
+
+
 
             modelBuilder.Entity<Shift>(entity =>
             {
@@ -136,6 +146,10 @@ namespace DataLayer
 
                 entity.Property(e => e.Payrate);
             });
+            modelBuilder.Entity<Shift>().HasData(
+                new Shift { ShiftId = 1, Description = "FirstShift", Payrate = 5 },
+                new Shift { ShiftId = 2, Description = "SecondShift", Payrate = 5 }
+                );
 
             modelBuilder.Entity<TableShift>(entity =>
             {
@@ -153,6 +167,24 @@ namespace DataLayer
 
             OnModelCreatingPartial(modelBuilder);
         }
+
+        /* private void Seed()
+         {
+             var firstShift = new Shift()
+             {
+                 ShiftId = 1,
+                 Description = "First Shift",
+                 Payrate = 5
+             };
+             var secondShift = new Shift()
+             {
+                 ShiftId = 1,
+                 Description = "Second Shift",
+                 Payrate = 5
+             };
+        }
+        */
+
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
     }

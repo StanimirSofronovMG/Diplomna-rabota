@@ -4,6 +4,7 @@ using DataLayer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataLayer.Migrations
 {
     [DbContext(typeof(RestaurantContext))]
-    partial class UsersContextModelSnapshot : ModelSnapshot
+    [Migration("20230414140010_SeedShift")]
+    partial class SeedShift
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -88,44 +90,6 @@ namespace DataLayer.Migrations
                     b.HasKey("TableId");
 
                     b.ToTable("Tables");
-
-                    b.HasData(
-                        new
-                        {
-                            TableId = 1,
-                            IsInside = true,
-                            SeatCount = 6
-                        },
-                        new
-                        {
-                            TableId = 2,
-                            IsInside = true,
-                            SeatCount = 6
-                        },
-                        new
-                        {
-                            TableId = 3,
-                            IsInside = true,
-                            SeatCount = 6
-                        },
-                        new
-                        {
-                            TableId = 4,
-                            IsInside = true,
-                            SeatCount = 6
-                        },
-                        new
-                        {
-                            TableId = 5,
-                            IsInside = true,
-                            SeatCount = 6
-                        },
-                        new
-                        {
-                            TableId = 6,
-                            IsInside = true,
-                            SeatCount = 6
-                        });
                 });
 
             modelBuilder.Entity("BusinessLayer.Models.TableShift", b =>

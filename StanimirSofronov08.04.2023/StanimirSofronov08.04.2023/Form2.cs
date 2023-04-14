@@ -1,4 +1,5 @@
-﻿using DataLayer;
+﻿using BusinessLayer.Models;
+using DataLayer;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -57,6 +58,9 @@ namespace StanimirSofronov08._04._2023
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            var selectedUser = comboBox1.SelectedItem.ToString();
+            AssignTableShift(1, 1, selectedUser!);
+
 
         }
 
@@ -71,6 +75,36 @@ namespace StanimirSofronov08._04._2023
             new Form3().Show();
             this.Hide();
         }
+
+        private void AssignTableShift(int tableId, int shiftId, string selectedUser)
+        {
+            //firsShift
+            var date = dateTimePicker1.Value.Date;
+
+            var user = _context!.Users.Include(u => u.Role)
+                .FirstOrDefault(u => u.UserName == selectedUser);
+            var tableShift = new TableShift
+            {
+                TableId = tableId,
+                ShiftId = shiftId,
+                ShiftDate = date,
+                UserId = user!.UserId
+            };
+
+            var existing = _context.TableShifts.FirstOrDefault(ts =>
+                 ts.TableId == tableShift.TableId &&
+                 ts.ShiftId == tableShift.ShiftId &&
+                 ts.ShiftDate == date
+                 );
+            if (existing != null)
+            {
+                _context.TableShifts.Remove(existing);
+            }
+            _context.TableShifts.Add(tableShift);
+            _context.SaveChanges();
+
+        }
+
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
@@ -78,6 +112,15 @@ namespace StanimirSofronov08._04._2023
             _context = new RestaurantContext();
 
             _context.Database.EnsureCreated();
+
+            //////////////////////////////////////////////////////
+            var users = _context.Users
+                   //.Where(u => u.RoleId==2)
+                   .Select(u => u.UserName).ToArray();
+
+            comboBox1.Items.AddRange(users);
+            comboBox2.Items.AddRange(users);
+
         }
 
         protected override void OnClosing(CancelEventArgs e)
@@ -87,6 +130,12 @@ namespace StanimirSofronov08._04._2023
             _context?.Dispose();
             _context = null;
 
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var selectedUser = comboBox2.SelectedItem.ToString();
+            AssignTableShift(1, 2, selectedUser!);
         }
     }
 }

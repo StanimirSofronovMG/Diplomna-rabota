@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             panel1 = new Panel();
+            comboBox2 = new ComboBox();
             comboBox1 = new ComboBox();
             listBox6 = new ListBox();
             listBox5 = new ListBox();
@@ -60,6 +61,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(255, 255, 128);
+            panel1.Controls.Add(comboBox2);
             panel1.Controls.Add(comboBox1);
             panel1.Controls.Add(listBox6);
             panel1.Controls.Add(listBox5);
@@ -78,10 +80,18 @@
             panel1.Size = new Size(624, 380);
             panel1.TabIndex = 0;
             // 
+            // comboBox2
+            // 
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(58, 96);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(121, 23);
+            comboBox2.TabIndex = 13;
+            comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
+            // 
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Mariika", "Ivan" });
             comboBox1.Location = new Point(58, 76);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(121, 23);
@@ -203,6 +213,7 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
+            pictureBox1.Tag = "1";
             pictureBox1.Click += pictureBox1_Click_1;
             // 
             // dateTimePicker1
@@ -285,5 +296,6 @@
         private Button button1;
         private ComboBox comboBox1;
         private ToolStripMenuItem tToolStripMenuItem;
+        private ComboBox comboBox2;
     }
 }
