@@ -113,8 +113,8 @@ namespace StanimirSofronov08._04._2023
 
             _context.Database.EnsureCreated();
 
-            //////////////////////////////////////////////////////
-            var users = _context.Users
+            //////////////////////////////////////////////////////  
+            var users = _context.Users.Include(u => u.UserVacations)
                    //.Where(u => u.RoleId==2)
                    .Select(u => u.UserName).ToArray();
 
