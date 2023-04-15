@@ -58,23 +58,25 @@ namespace StanimirSofronov08._04._2023
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var selectedUser = comboBox1.SelectedItem.ToString();
+            var selectedUser = FirstTableFirstShiftBox.SelectedItem.ToString();
             AssignTableShift(1, 1, selectedUser!);
 
 
         }
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var selectedUser = FirstTableSecondShiftBox.SelectedItem.ToString();
+            AssignTableShift(1, 2, selectedUser!);
+        }
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
         {
-            comboBox1.Visible = true;
+            FirstTableFirstShiftBox.Visible = true;
 
+            FirstTableSecondShiftBox.Visible = true;
         }
 
-        private void tToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            new Form3().Show();
-            this.Hide();
-        }
+
 
         private void AssignTableShift(int tableId, int shiftId, string selectedUser)
         {
@@ -103,6 +105,7 @@ namespace StanimirSofronov08._04._2023
             _context.TableShifts.Add(tableShift);
             _context.SaveChanges();
 
+
         }
 
         protected override void OnLoad(EventArgs e)
@@ -118,8 +121,8 @@ namespace StanimirSofronov08._04._2023
                    //.Where(u => u.RoleId==2)
                    .Select(u => u.UserName).ToArray();
 
-            comboBox1.Items.AddRange(users);
-            comboBox2.Items.AddRange(users);
+            FirstTableFirstShiftBox.Items.AddRange(users);
+            FirstTableSecondShiftBox.Items.AddRange(users);
 
         }
 
@@ -132,10 +135,26 @@ namespace StanimirSofronov08._04._2023
 
         }
 
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+
+
+        private void MenuButton_Click(object sender, EventArgs e)
         {
-            var selectedUser = comboBox2.SelectedItem.ToString();
-            AssignTableShift(1, 2, selectedUser!);
+            if (isAdmin == true)
+            {
+                new Form3(true).Show();
+                this.Hide();
+            }
+            else if (isAdmin == false)
+            {
+                new Form3(false).Show();
+                this.Hide();
+            }
         }
+
+        private void BothShiftForDate_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

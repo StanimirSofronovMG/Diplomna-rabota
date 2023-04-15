@@ -33,9 +33,10 @@
             contextMenuStrip2 = new ContextMenuStrip(components);
             menuStrip1 = new MenuStrip();
             изберетеОпцияToolStripMenuItem = new ToolStripMenuItem();
-            toolStripMenuItem1 = new ToolStripMenuItem();
-            закъсненияБонусиToolStripMenuItem = new ToolStripMenuItem();
+            ReservationForm = new ToolStripMenuItem();
+            Reports = new ToolStripMenuItem();
             добавянеНаСлужителToolStripMenuItem = new ToolStripMenuItem();
+            toolStripMenuItem1 = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -60,29 +61,40 @@
             // 
             // изберетеОпцияToolStripMenuItem
             // 
-            изберетеОпцияToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { toolStripMenuItem1, закъсненияБонусиToolStripMenuItem, добавянеНаСлужителToolStripMenuItem });
+            изберетеОпцияToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { ReservationForm, Reports, добавянеНаСлужителToolStripMenuItem, toolStripMenuItem1 });
             изберетеОпцияToolStripMenuItem.Name = "изберетеОпцияToolStripMenuItem";
             изберетеОпцияToolStripMenuItem.Size = new Size(107, 20);
             изберетеОпцияToolStripMenuItem.Text = "Изберете опция";
+            изберетеОпцияToolStripMenuItem.Click += изберетеОпцияToolStripMenuItem_Click;
             // 
-            // toolStripMenuItem1
+            // ReservationForm
             // 
-            toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(199, 22);
-            toolStripMenuItem1.Text = "Резервации";
+            ReservationForm.Name = "ReservationForm";
+            ReservationForm.Size = new Size(199, 22);
+            ReservationForm.Text = "Резервации";
+            ReservationForm.Click += toolStripMenuItem1_Click;
             // 
-            // закъсненияБонусиToolStripMenuItem
+            // Reports
             // 
-            закъсненияБонусиToolStripMenuItem.Name = "закъсненияБонусиToolStripMenuItem";
-            закъсненияБонусиToolStripMenuItem.Size = new Size(199, 22);
-            закъсненияБонусиToolStripMenuItem.Text = "Закъснения, бонуси";
+            Reports.Name = "Reports";
+            Reports.Size = new Size(199, 22);
+            Reports.Text = "Отчети";
+            Reports.Click += Reports_Click;
             // 
             // добавянеНаСлужителToolStripMenuItem
             // 
             добавянеНаСлужителToolStripMenuItem.Name = "добавянеНаСлужителToolStripMenuItem";
             добавянеНаСлужителToolStripMenuItem.Size = new Size(199, 22);
             добавянеНаСлужителToolStripMenuItem.Text = "Добавяне на служител";
+            добавянеНаСлужителToolStripMenuItem.Visible = false;
             добавянеНаСлужителToolStripMenuItem.Click += добавянеНаСлужителToolStripMenuItem_Click;
+            // 
+            // toolStripMenuItem1
+            // 
+            toolStripMenuItem1.Name = "toolStripMenuItem1";
+            toolStripMenuItem1.Size = new Size(199, 22);
+            toolStripMenuItem1.Text = "Изход";
+            toolStripMenuItem1.Click += toolStripMenuItem1_Click_1;
             // 
             // Form3
             // 
@@ -106,8 +118,9 @@
         private ContextMenuStrip contextMenuStrip2;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem изберетеОпцияToolStripMenuItem;
-        private ToolStripMenuItem toolStripMenuItem1;
-        private ToolStripMenuItem закъсненияБонусиToolStripMenuItem;
+        private ToolStripMenuItem ReservationForm;
+        private ToolStripMenuItem Reports;
         private ToolStripMenuItem добавянеНаСлужителToolStripMenuItem;
+        private ToolStripMenuItem toolStripMenuItem1;
     }
 }

@@ -12,6 +12,9 @@ namespace StanimirSofronov08._04._2023
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new Form2(true));
+
+
+
         }
     }
 }

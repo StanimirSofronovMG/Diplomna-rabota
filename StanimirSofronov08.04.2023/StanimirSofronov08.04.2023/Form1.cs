@@ -21,16 +21,21 @@ namespace StanimirSofronov08._04._2023
 
             var userEntity = _context!.Users.Include(u => u.Role)
                 .FirstOrDefault(u => u.UserName == txtUsername.Text && u.Password == txtPassword.Text);
-            
-            if(userEntity == null)
+
+            if (userEntity == null)
             {
                 MessageBox.Show("Потребителското име или паролата са грешни. Опитайте отново");
                 txtUsername.Clear();
                 txtPassword.Clear();
             }
-            else if (userEntity.Role.RoleName=="Admin")
+            else if (userEntity.Role.RoleName == "Admin")
             {
-                new Form2(true).Show();
+                new Form3(true).Show();
+                this.Hide();
+            }
+            else if (userEntity.Role.RoleName == "Employee")
+            {
+                new Form3(false).Show();
                 this.Hide();
             }
             

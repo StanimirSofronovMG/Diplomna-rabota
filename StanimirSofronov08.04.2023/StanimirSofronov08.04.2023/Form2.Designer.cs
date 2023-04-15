@@ -30,14 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             panel1 = new Panel();
-            comboBox2 = new ComboBox();
-            comboBox1 = new ComboBox();
+            FirstTableSecondShiftBox = new ComboBox();
+            FirstTableFirstShiftBox = new ComboBox();
             listBox6 = new ListBox();
             listBox5 = new ListBox();
             listBox4 = new ListBox();
             listBox3 = new ListBox();
             listBox2 = new ListBox();
-            listBox1 = new ListBox();
+            BothShiftForDate = new ListBox();
             pictureBox6 = new PictureBox();
             pictureBox5 = new PictureBox();
             pictureBox4 = new PictureBox();
@@ -45,9 +45,8 @@
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
             dateTimePicker1 = new DateTimePicker();
-            menuStrip1 = new MenuStrip();
-            tToolStripMenuItem = new ToolStripMenuItem();
-            button1 = new Button();
+            ExitButton = new Button();
+            MenuButton = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
@@ -55,20 +54,19 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(255, 255, 128);
-            panel1.Controls.Add(comboBox2);
-            panel1.Controls.Add(comboBox1);
+            panel1.Controls.Add(FirstTableSecondShiftBox);
+            panel1.Controls.Add(FirstTableFirstShiftBox);
             panel1.Controls.Add(listBox6);
             panel1.Controls.Add(listBox5);
             panel1.Controls.Add(listBox4);
             panel1.Controls.Add(listBox3);
             panel1.Controls.Add(listBox2);
-            panel1.Controls.Add(listBox1);
+            panel1.Controls.Add(BothShiftForDate);
             panel1.Controls.Add(pictureBox6);
             panel1.Controls.Add(pictureBox5);
             panel1.Controls.Add(pictureBox4);
@@ -80,24 +78,25 @@
             panel1.Size = new Size(624, 380);
             panel1.TabIndex = 0;
             // 
-            // comboBox2
+            // FirstTableSecondShiftBox
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(58, 96);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(121, 23);
-            comboBox2.TabIndex = 13;
-            comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
+            FirstTableSecondShiftBox.FormattingEnabled = true;
+            FirstTableSecondShiftBox.Location = new Point(58, 96);
+            FirstTableSecondShiftBox.Name = "FirstTableSecondShiftBox";
+            FirstTableSecondShiftBox.Size = new Size(121, 23);
+            FirstTableSecondShiftBox.TabIndex = 13;
+            FirstTableSecondShiftBox.Visible = false;
+            FirstTableSecondShiftBox.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
             // 
-            // comboBox1
+            // FirstTableFirstShiftBox
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(58, 76);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 12;
-            comboBox1.Visible = false;
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            FirstTableFirstShiftBox.FormattingEnabled = true;
+            FirstTableFirstShiftBox.Location = new Point(58, 76);
+            FirstTableFirstShiftBox.Name = "FirstTableFirstShiftBox";
+            FirstTableFirstShiftBox.Size = new Size(121, 23);
+            FirstTableFirstShiftBox.TabIndex = 12;
+            FirstTableFirstShiftBox.Visible = false;
+            FirstTableFirstShiftBox.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // listBox6
             // 
@@ -144,14 +143,15 @@
             listBox2.Size = new Size(91, 19);
             listBox2.TabIndex = 7;
             // 
-            // listBox1
+            // BothShiftForDate
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(74, 164);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(91, 19);
-            listBox1.TabIndex = 6;
+            BothShiftForDate.FormattingEnabled = true;
+            BothShiftForDate.ItemHeight = 15;
+            BothShiftForDate.Location = new Point(74, 164);
+            BothShiftForDate.Name = "BothShiftForDate";
+            BothShiftForDate.Size = new Size(91, 19);
+            BothShiftForDate.TabIndex = 6;
+            BothShiftForDate.SelectedIndexChanged += BothShiftForDate_SelectedIndexChanged;
             // 
             // pictureBox6
             // 
@@ -218,48 +218,41 @@
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(90, 17);
+            dateTimePicker1.Location = new Point(313, 17);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(146, 23);
             dateTimePicker1.TabIndex = 1;
             dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
             // 
-            // menuStrip1
+            // ExitButton
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { tToolStripMenuItem });
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(800, 24);
-            menuStrip1.TabIndex = 2;
-            menuStrip1.Text = "menuStrip1";
-            menuStrip1.ItemClicked += menuStrip1_ItemClicked;
+            ExitButton.Location = new Point(634, 2);
+            ExitButton.Name = "ExitButton";
+            ExitButton.Size = new Size(127, 38);
+            ExitButton.TabIndex = 3;
+            ExitButton.Text = "Изход";
+            ExitButton.UseVisualStyleBackColor = true;
+            ExitButton.Click += button1_Click;
             // 
-            // tToolStripMenuItem
+            // MenuButton
             // 
-            tToolStripMenuItem.Name = "tToolStripMenuItem";
-            tToolStripMenuItem.Size = new Size(155, 20);
-            tToolStripMenuItem.Text = "tДобавяне на служители";
-            tToolStripMenuItem.Click += tToolStripMenuItem_Click;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(632, 17);
-            button1.Name = "button1";
-            button1.Size = new Size(127, 32);
-            button1.TabIndex = 3;
-            button1.Text = "Изход";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            MenuButton.Location = new Point(12, 2);
+            MenuButton.Name = "MenuButton";
+            MenuButton.Size = new Size(142, 38);
+            MenuButton.TabIndex = 4;
+            MenuButton.Text = "Меню";
+            MenuButton.UseVisualStyleBackColor = true;
+            MenuButton.Click += MenuButton_Click;
             // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(button1);
+            Controls.Add(MenuButton);
+            Controls.Add(ExitButton);
             Controls.Add(dateTimePicker1);
             Controls.Add(panel1);
-            Controls.Add(menuStrip1);
             Name = "Form2";
             Text = "Резервации";
             Load += Form2_Load;
@@ -270,10 +263,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -286,16 +276,15 @@
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
         private DateTimePicker dateTimePicker1;
-        private MenuStrip menuStrip1;
         private ListBox listBox6;
         private ListBox listBox5;
         private ListBox listBox4;
         private ListBox listBox3;
         private ListBox listBox2;
-        private ListBox listBox1;
-        private Button button1;
-        private ComboBox comboBox1;
-        private ToolStripMenuItem tToolStripMenuItem;
-        private ComboBox comboBox2;
+        private ListBox BothShiftForDate;
+        private Button ExitButton;
+        private ComboBox FirstTableFirstShiftBox;
+        private ComboBox FirstTableSecondShiftBox;
+        private Button MenuButton;
     }
 }
