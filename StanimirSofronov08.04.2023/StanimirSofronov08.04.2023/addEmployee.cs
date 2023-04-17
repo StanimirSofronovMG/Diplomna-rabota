@@ -28,16 +28,33 @@ namespace StanimirSofronov08._04._2023
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var userToAdd = new User
+            if (EmployeeButton.Checked)
             {
-                UserName = textBox1.Text,
-                Password = textBox3.Text,
-                RoleId=2
-            };
-            _context!.Users.Add(userToAdd);
-            _context.SaveChanges(); 
-
-            this.Hide();
+                {
+                    var userToAdd = new User
+                    {
+                        UserName = textBox1.Text,
+                        Password = textBox3.Text,
+                        RoleId = 2
+                    };
+                    _context!.Users.Add(userToAdd);
+                    _context.SaveChanges();
+                    this.Hide();
+                }
+            }
+            else if(AdminButton.Checked)
+            {
+                var userToAdd = new User
+                {
+                    UserName = textBox1.Text,
+                    Password = textBox3.Text,
+                    RoleId = 1
+                };
+                _context!.Users.Add(userToAdd);
+                _context.SaveChanges();
+                this.Hide();
+            }
+           
         }
         protected override void OnLoad(EventArgs e)
         {

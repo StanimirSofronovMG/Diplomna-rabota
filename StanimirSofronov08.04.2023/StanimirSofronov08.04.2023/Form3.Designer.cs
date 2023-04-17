@@ -37,6 +37,7 @@
             Reports = new ToolStripMenuItem();
             добавянеНаСлужителToolStripMenuItem = new ToolStripMenuItem();
             toolStripMenuItem1 = new ToolStripMenuItem();
+            премахванеНаПотребителToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -61,7 +62,7 @@
             // 
             // изберетеОпцияToolStripMenuItem
             // 
-            изберетеОпцияToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { ReservationForm, Reports, добавянеНаСлужителToolStripMenuItem, toolStripMenuItem1 });
+            изберетеОпцияToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { ReservationForm, Reports, добавянеНаСлужителToolStripMenuItem, toolStripMenuItem1, премахванеНаПотребителToolStripMenuItem });
             изберетеОпцияToolStripMenuItem.Name = "изберетеОпцияToolStripMenuItem";
             изберетеОпцияToolStripMenuItem.Size = new Size(107, 20);
             изберетеОпцияToolStripMenuItem.Text = "Изберете опция";
@@ -70,21 +71,21 @@
             // ReservationForm
             // 
             ReservationForm.Name = "ReservationForm";
-            ReservationForm.Size = new Size(199, 22);
+            ReservationForm.Size = new Size(225, 22);
             ReservationForm.Text = "Резервации";
             ReservationForm.Click += toolStripMenuItem1_Click;
             // 
             // Reports
             // 
             Reports.Name = "Reports";
-            Reports.Size = new Size(199, 22);
+            Reports.Size = new Size(225, 22);
             Reports.Text = "Отчети";
             Reports.Click += Reports_Click;
             // 
             // добавянеНаСлужителToolStripMenuItem
             // 
             добавянеНаСлужителToolStripMenuItem.Name = "добавянеНаСлужителToolStripMenuItem";
-            добавянеНаСлужителToolStripMenuItem.Size = new Size(199, 22);
+            добавянеНаСлужителToolStripMenuItem.Size = new Size(225, 22);
             добавянеНаСлужителToolStripMenuItem.Text = "Добавяне на служител";
             добавянеНаСлужителToolStripMenuItem.Visible = false;
             добавянеНаСлужителToolStripMenuItem.Click += добавянеНаСлужителToolStripMenuItem_Click;
@@ -92,9 +93,16 @@
             // toolStripMenuItem1
             // 
             toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(199, 22);
+            toolStripMenuItem1.Size = new Size(225, 22);
             toolStripMenuItem1.Text = "Изход";
             toolStripMenuItem1.Click += toolStripMenuItem1_Click_1;
+            // 
+            // премахванеНаПотребителToolStripMenuItem
+            // 
+            премахванеНаПотребителToolStripMenuItem.Name = "премахванеНаПотребителToolStripMenuItem";
+            премахванеНаПотребителToolStripMenuItem.Size = new Size(225, 22);
+            премахванеНаПотребителToolStripMenuItem.Text = "Премахване на потребител";
+            премахванеНаПотребителToolStripMenuItem.Click += премахванеНаПотребителToolStripMenuItem_Click;
             // 
             // Form3
             // 
@@ -122,5 +130,6 @@
         private ToolStripMenuItem Reports;
         private ToolStripMenuItem добавянеНаСлужителToolStripMenuItem;
         private ToolStripMenuItem toolStripMenuItem1;
+        private ToolStripMenuItem премахванеНаПотребителToolStripMenuItem;
     }
 }

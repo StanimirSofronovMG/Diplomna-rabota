@@ -1,6 +1,8 @@
 ﻿using BusinessLayer.Models;
 using DataLayer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -60,6 +62,8 @@ namespace StanimirSofronov08._04._2023
         {
             var selectedUser = FirstTableFirstShiftBox.SelectedItem.ToString();
             AssignTableShift(1, 1, selectedUser!);
+          //  BothShiftForDate.Text = _context.TableShifts.EntityType.ToString();
+            LoadShiftsDate();
 
 
         }
@@ -67,13 +71,19 @@ namespace StanimirSofronov08._04._2023
         {
             var selectedUser = FirstTableSecondShiftBox.SelectedItem.ToString();
             AssignTableShift(1, 2, selectedUser!);
+            LoadShiftsDate();
+            LoadShifts();
+           
         }
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
         {
-            FirstTableFirstShiftBox.Visible = true;
+            if (isAdmin == true)
+            {
+                FirstTableFirstShiftBox.Visible = true;
 
-            FirstTableSecondShiftBox.Visible = true;
+                FirstTableSecondShiftBox.Visible = true;
+            }
         }
 
 
@@ -117,12 +127,17 @@ namespace StanimirSofronov08._04._2023
             _context.Database.EnsureCreated();
 
             //////////////////////////////////////////////////////  
+
+
+
+
             var users = _context.Users.Include(u => u.UserVacations)
                    //.Where(u => u.RoleId==2)
                    .Select(u => u.UserName).ToArray();
 
             FirstTableFirstShiftBox.Items.AddRange(users);
             FirstTableSecondShiftBox.Items.AddRange(users);
+            isLateBox.Items.AddRange(users);
 
         }
 
@@ -135,7 +150,21 @@ namespace StanimirSofronov08._04._2023
 
         }
 
+        private void LoadShifts()
+        {
+            var shifts = _context.TableShifts.ToList();
+            BothShiftForDate.DataSource = shifts;
+            BothShiftForDate.ValueMember = "UserId";
+            BothShiftForDate.DisplayMember = "UserId";
+          
 
+        }
+        private void LoadShiftsDate()
+        {
+            var shifts = _context.TableShifts.ToList();
+            BothShiftForDate.DataSource = shifts;
+            BothShiftForDate.DisplayMember = "ShiftDate";
+        }
 
         private void MenuButton_Click(object sender, EventArgs e)
         {
@@ -156,5 +185,37 @@ namespace StanimirSofronov08._04._2023
 
         }
 
+
+
+        private void isLateBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var selectedUser = isLateBox.SelectedItem.ToString();
+
+        }
+        /*   private void IsLateForShift(bool late, string selectedUser)
+           {
+
+               var date = dateTimePicker1.Value.Date;
+
+               var user = _context!.Users.Include(u => u.Role)
+                   .FirstOrDefault(u => u.UserName == selectedUser);
+               var isLate = new TableShift
+               {
+                   Late = late  ,
+                   UserId = user!.UserId,
+                    ShiftDate = date
+               };
+
+               var existing = _context.TableShifts.FirstOrDefault(ts =>
+                    ts.Late == isLate.Late &&
+                    ts.ShiftDate == date
+
+                    );
+
+               _context.TableShifts.Add(isLate);
+               _context.SaveChanges();
+
+
+           }*/
     }
 }

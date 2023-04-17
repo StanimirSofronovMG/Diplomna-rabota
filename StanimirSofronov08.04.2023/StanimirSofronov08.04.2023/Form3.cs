@@ -37,9 +37,14 @@ namespace StanimirSofronov08._04._2023
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
-            new Form2(true).Show();
-
+            if (isAdmin == true)
+            {
+                new Form2(true).Show();
+            }
+            else if (isAdmin == false)
+            {
+                new Form2(false).Show();
+            }
             this.Hide();
         }
 
@@ -61,6 +66,12 @@ namespace StanimirSofronov08._04._2023
         {
             new ReportsForm().Show();
             this.Hide();
+        }
+
+        private void премахванеНаПотребителToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new DeleteUser().Show();
+           
         }
     }
 }

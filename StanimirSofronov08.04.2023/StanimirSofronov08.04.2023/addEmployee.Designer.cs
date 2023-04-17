@@ -33,6 +33,9 @@
             newEmployeeUserName = new Label();
             NewUserPassword = new Label();
             button1 = new Button();
+            label1 = new Label();
+            AdminButton = new RadioButton();
+            EmployeeButton = new RadioButton();
             SuspendLayout();
             // 
             // textBox1
@@ -78,11 +81,45 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(52, 196);
+            label1.Name = "label1";
+            label1.Size = new Size(34, 15);
+            label1.TabIndex = 6;
+            label1.Text = "Роля";
+            // 
+            // AdminButton
+            // 
+            AdminButton.AutoSize = true;
+            AdminButton.Location = new Point(160, 192);
+            AdminButton.Name = "AdminButton";
+            AdminButton.Size = new Size(112, 19);
+            AdminButton.TabIndex = 7;
+            AdminButton.TabStop = true;
+            AdminButton.Text = "Администратор";
+            AdminButton.UseVisualStyleBackColor = true;
+            // 
+            // EmployeeButton
+            // 
+            EmployeeButton.AutoSize = true;
+            EmployeeButton.Location = new Point(325, 194);
+            EmployeeButton.Name = "EmployeeButton";
+            EmployeeButton.Size = new Size(80, 19);
+            EmployeeButton.TabIndex = 8;
+            EmployeeButton.TabStop = true;
+            EmployeeButton.Text = "Служител";
+            EmployeeButton.UseVisualStyleBackColor = true;
+            // 
             // addEmployee
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(EmployeeButton);
+            Controls.Add(AdminButton);
+            Controls.Add(label1);
             Controls.Add(button1);
             Controls.Add(NewUserPassword);
             Controls.Add(newEmployeeUserName);
@@ -101,5 +138,8 @@
         private Label newEmployeeUserName;
         private Label NewUserPassword;
         private Button button1;
+        private Label label1;
+        private RadioButton AdminButton;
+        private RadioButton EmployeeButton;
     }
 }
