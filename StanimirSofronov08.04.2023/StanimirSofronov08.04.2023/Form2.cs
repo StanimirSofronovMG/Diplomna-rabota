@@ -152,10 +152,11 @@ namespace StanimirSofronov08._04._2023
 
         private void LoadShifts()
         {
-            var shifts = _context.TableShifts.ToList();
-            BothShiftForDate.DataSource = shifts;
-            BothShiftForDate.ValueMember = "UserId";
-            BothShiftForDate.DisplayMember = "UserId";
+            var shifts = _context.TableShifts.Include(s => s.User).ToList();
+            var shiftsUsers = shifts.Where(s => s.ShiftDate.Date.Equals(dateTimePicker1.Value.Date)).Select(s => s.User).ToList();
+            BothShiftForDate.DataSource = shiftsUsers;
+            BothShiftForDate.ValueMember = "UserName";
+            BothShiftForDate.DisplayMember = "UserName";
           
 
         }
@@ -190,29 +191,26 @@ namespace StanimirSofronov08._04._2023
         private void isLateBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             var selectedUser = isLateBox.SelectedItem.ToString();
+           /* IsLateForShift(true,selectedUser);*/
 
         }
-        /*   private void IsLateForShift(bool late, string selectedUser)
+           /*private void IsLateForShift(bool late, string selectedUser)
            {
 
                var date = dateTimePicker1.Value.Date;
 
                var user = _context!.Users.Include(u => u.Role)
                    .FirstOrDefault(u => u.UserName == selectedUser);
-               var isLate = new TableShift
-               {
-                   Late = late  ,
-                   UserId = user!.UserId,
-                    ShiftDate = date
-               };
+              
 
                var existing = _context.TableShifts.FirstOrDefault(ts =>
-                    ts.Late == isLate.Late &&
+                
                     ts.ShiftDate == date
 
                     );
 
-               _context.TableShifts.Add(isLate);
+            existing.Late = late;
+               _context.TableShifts.Update(existing);
                _context.SaveChanges();
 
 

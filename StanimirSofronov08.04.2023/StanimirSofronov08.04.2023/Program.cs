@@ -11,7 +11,7 @@ namespace StanimirSofronov08._04._2023
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form2(true));
+            Application.Run(new Form1());
 
 
 
