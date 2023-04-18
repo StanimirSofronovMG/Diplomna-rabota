@@ -14,10 +14,13 @@ namespace BusinessLayer.Models
         public int TableId { get; set; }
 
         [Key]
+        [ForeignKey(nameof(Shift))]
         public int ShiftId { get; set; }
 
         [Key]
         public DateTime ShiftDate { get; set; }
+
+        public Shift Shift { get; set; }
 
         [ForeignKey(nameof(User))]
         public int UserId { get; set; }
