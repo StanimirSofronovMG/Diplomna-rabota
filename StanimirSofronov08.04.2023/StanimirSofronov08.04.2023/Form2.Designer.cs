@@ -82,7 +82,7 @@
             // FirstTableFirstShiftBox
             // 
             FirstTableFirstShiftBox.FormattingEnabled = true;
-            FirstTableFirstShiftBox.Location = new Point(58, 76);
+            FirstTableFirstShiftBox.Location = new Point(58, 48);
             FirstTableFirstShiftBox.Name = "FirstTableFirstShiftBox";
             FirstTableFirstShiftBox.Size = new Size(121, 23);
             FirstTableFirstShiftBox.TabIndex = 12;

@@ -62,18 +62,15 @@ namespace StanimirSofronov08._04._2023
         {
             var selectedUser = FirstTableFirstShiftBox.SelectedItem.ToString();
             AssignTableShift(1, 1, selectedUser!);
-          //  BothShiftForDate.Text = _context.TableShifts.EntityType.ToString();
-            LoadShiftsDate();
-
-
+            //  BothShiftForDate.Text = _context.TableShifts.EntityType.ToString();
+            LoadShifts();
         }
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             var selectedUser = FirstTableSecondShiftBox.SelectedItem.ToString();
             AssignTableShift(1, 2, selectedUser!);
-            LoadShiftsDate();
             LoadShifts();
-           
+
         }
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
@@ -150,20 +147,18 @@ namespace StanimirSofronov08._04._2023
 
         private void LoadShifts()
         {
-            var shifts = _context.TableShifts.Include(s => s.User).ToList();
-            var shiftsUsers = shifts.Where(s => s.ShiftDate.Date.Equals(dateTimePicker1.Value.Date)).Select(s => s.User).ToList();
+            var shiftsQuery = _context.TableShifts.Include(s => s.User);
+            var shiftsUsers = shiftsQuery.Where(s => s.ShiftDate.Date.Equals(dateTimePicker1.Value.Date))
+                                         .OrderBy(s => s.TableId).ThenBy(s => s.ShiftId)
+                                         .Select(s => s.User).ToList();
             BothShiftForDate.DataSource = shiftsUsers;
             BothShiftForDate.ValueMember = "UserName";
             BothShiftForDate.DisplayMember = "UserName";
-          
+
 
         }
-        private void LoadShiftsDate()
-        {
-            var shifts = _context.TableShifts.ToList();
-            BothShiftForDate.DataSource = shifts;
-            BothShiftForDate.DisplayMember = "ShiftDate";
-        }
+
+
 
         private void MenuButton_Click(object sender, EventArgs e)
         {
@@ -189,25 +184,25 @@ namespace StanimirSofronov08._04._2023
         private void isLateBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             var selectedUser = isLateBox.SelectedItem.ToString();
-            IsLateForShift(true,selectedUser);
+            IsLateForShift(true, selectedUser);
 
         }
 
         private void IsLateForShift(bool isLate, string selectedUser)
         {
-        
+
             var date = dateTimePicker1.Value.Date;
-        
+
             var user = _context!.Users.Include(u => u.Role)
-                .First(u => u.UserName == selectedUser);            
-            
-            var tableShifts = _context.TableShifts.Where(ts =>  ts.ShiftDate == date && ts.UserId == user.UserId).ToList();        
-            foreach(var ts in tableShifts)
+                .First(u => u.UserName == selectedUser);
+
+            var tableShifts = _context.TableShifts.Where(ts => ts.ShiftDate == date && ts.UserId == user.UserId).ToList();
+            foreach (var ts in tableShifts)
             {
-                ts.Late = isLate;               
+                ts.Late = isLate;
             }
-            
-            _context.SaveChanges();             
+
+            _context.SaveChanges();
         }
     }
 }

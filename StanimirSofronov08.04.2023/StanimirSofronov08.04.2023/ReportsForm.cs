@@ -16,5 +16,10 @@ namespace StanimirSofronov08._04._2023
         {
             InitializeComponent();
         }
+
+        private void Report1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
