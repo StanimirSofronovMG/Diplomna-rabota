@@ -129,8 +129,6 @@ namespace StanimirSofronov08._04._2023
             //////////////////////////////////////////////////////  
 
 
-
-
             var users = _context.Users.Include(u => u.UserVacations)
                    //.Where(u => u.RoleId==2)
                    .Select(u => u.UserName).ToArray();
@@ -191,29 +189,25 @@ namespace StanimirSofronov08._04._2023
         private void isLateBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             var selectedUser = isLateBox.SelectedItem.ToString();
-           /* IsLateForShift(true,selectedUser);*/
+            IsLateForShift(true,selectedUser);
 
         }
-           /*private void IsLateForShift(bool late, string selectedUser)
-           {
 
-               var date = dateTimePicker1.Value.Date;
-
-               var user = _context!.Users.Include(u => u.Role)
-                   .FirstOrDefault(u => u.UserName == selectedUser);
-              
-
-               var existing = _context.TableShifts.FirstOrDefault(ts =>
-                
-                    ts.ShiftDate == date
-
-                    );
-
-            existing.Late = late;
-               _context.TableShifts.Update(existing);
-               _context.SaveChanges();
-
-
-           }*/
+        private void IsLateForShift(bool isLate, string selectedUser)
+        {
+        
+            var date = dateTimePicker1.Value.Date;
+        
+            var user = _context!.Users.Include(u => u.Role)
+                .First(u => u.UserName == selectedUser);            
+            
+            var tableShifts = _context.TableShifts.Where(ts =>  ts.ShiftDate == date && ts.UserId == user.UserId).ToList();        
+            foreach(var ts in tableShifts)
+            {
+                ts.Late = isLate;               
+            }
+            
+            _context.SaveChanges();             
+        }
     }
 }
