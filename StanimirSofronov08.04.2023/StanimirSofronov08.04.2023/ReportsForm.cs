@@ -65,5 +65,26 @@ namespace StanimirSofronov08._04._2023
         {
             selectedUsername = cbUsers.SelectedItem.ToString();
         }
+
+        private void btnTotalHours_Click(object sender, EventArgs e)
+        {
+            var user = _context.Users.First(u => u.UserName == selectedUsername);
+            var from = dateTimePickerFrom.Value.Month;
+            var to= dateTimePickerTo.Value.Month;
+
+            
+            var filtered = _context.TableShifts.Include(ts => ts.Shift)
+                .Where(ts => ts.UserId == user.UserId &&
+                             ts.ShiftDate.Date.Month >= from &&
+                             ts.ShiftDate.Date.Month <= to).ToList();
+
+            var result = filtered.Select(x =>
+            $"- {x.ShiftDate.Date} | {x.TableId} | {x.Shift.Description} | {x.Shift.Payrate * 6} | {x.Late.ToString()} | {x.MissedShift} "
+            ).ToArray();
+
+            listBoxResult.Items.Clear();
+            listBoxResult.Items.Add("   Месец | Взети смени | Взети часове  | Извънреден труд ");
+            listBoxResult.Items.AddRange(result);
+        }
     }
 }

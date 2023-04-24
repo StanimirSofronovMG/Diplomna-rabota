@@ -124,8 +124,9 @@
             btnTotalHours.Name = "btnTotalHours";
             btnTotalHours.Size = new Size(180, 50);
             btnTotalHours.TabIndex = 8;
-            btnTotalHours.Text = "button1";
+            btnTotalHours.Text = "GetTotalHours";
             btnTotalHours.UseVisualStyleBackColor = true;
+            btnTotalHours.Click += btnTotalHours_Click;
             // 
             // ReportsForm
             // 
