@@ -1,6 +1,6 @@
 ﻿namespace StanimirSofronov08._04._2023
 {
-    partial class Form1
+    partial class SignInForm
     {
         /// <summary>
         ///  Required designer variable.

@@ -42,7 +42,7 @@ namespace StanimirSofronov08._04._2023
             _context = null;
         }
 
-        private void Report1_Click(object sender, EventArgs e)
+        private void btnAllShifts_Click(object sender, EventArgs e)
         {
             // Get all shifts for a given user for the last month
             var user = _context.Users.First(u => u.UserName == selectedUsername);
@@ -52,7 +52,7 @@ namespace StanimirSofronov08._04._2023
                              ts.ShiftDate.Date >= dateTimePickerFrom.Value.Date &&
                              ts.ShiftDate.Date <= dateTimePickerTo.Value.Date).ToList();
 
-            var result = filtered.Select(x => 
+            var result = filtered.Select(x =>
             $"- {x.ShiftDate.Date} | {x.TableId} | {x.Shift.Description} | {x.Shift.Payrate * 6} | {x.Late.ToString()} | {x.MissedShift} "
             ).ToArray();
 

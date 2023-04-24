@@ -1,6 +1,6 @@
 ﻿namespace StanimirSofronov08._04._2023
 {
-    partial class Form3
+    partial class MenuForm
     {
         /// <summary>
         /// Required designer variable.

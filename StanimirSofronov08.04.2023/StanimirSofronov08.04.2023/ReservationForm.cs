@@ -15,13 +15,13 @@ using System.Windows.Forms;
 
 namespace StanimirSofronov08._04._2023
 {
-    public partial class Form2 : Form
+    public partial class ReservationForm : Form
     {
 
         private bool isAdmin;
         private RestaurantContext _context;
 
-        public Form2(bool is_Admin)
+        public ReservationForm(bool is_Admin)
         {
             InitializeComponent();
             this.isAdmin = is_Admin;
@@ -44,7 +44,7 @@ namespace StanimirSofronov08._04._2023
 
         private void button1_Click(object sender, EventArgs e)
         {
-            new Form1().Show();
+            new SignInForm().Show();
             this.Close();
         }
 
@@ -164,12 +164,12 @@ namespace StanimirSofronov08._04._2023
         {
             if (isAdmin == true)
             {
-                new Form3(true).Show();
+                new MenuForm(true).Show();
                 this.Hide();
             }
             else if (isAdmin == false)
             {
-                new Form3(false).Show();
+                new MenuForm(false).Show();
                 this.Hide();
             }
         }

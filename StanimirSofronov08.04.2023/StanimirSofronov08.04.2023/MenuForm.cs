@@ -12,13 +12,13 @@ using System.Windows.Forms;
 
 namespace StanimirSofronov08._04._2023
 {
-    public partial class Form3 : Form
+    public partial class MenuForm : Form
     {
         private RestaurantContext? _context;
 
         private bool isAdmin;
 
-        public Form3(bool is_Admin)
+        public MenuForm(bool is_Admin)
         {
             InitializeComponent();
             this.isAdmin = is_Admin;
@@ -39,11 +39,11 @@ namespace StanimirSofronov08._04._2023
         {
             if (isAdmin == true)
             {
-                new Form2(true).Show();
+                new ReservationForm(true).Show();
             }
             else if (isAdmin == false)
             {
-                new Form2(false).Show();
+                new ReservationForm(false).Show();
             }
             this.Hide();
         }
@@ -58,7 +58,7 @@ namespace StanimirSofronov08._04._2023
 
         private void toolStripMenuItem1_Click_1(object sender, EventArgs e)
         {
-            new Form1().Show();
+            new SignInForm().Show();
             this.Hide();
         }
 

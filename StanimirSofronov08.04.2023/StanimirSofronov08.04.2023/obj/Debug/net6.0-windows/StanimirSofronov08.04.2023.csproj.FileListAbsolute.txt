@@ -1,4 +1,8 @@
 C:\Diplomna\Diplomna-rabota\StanimirSofronov08.04.2023\StanimirSofronov08.04.2023\bin\Debug\net6.0-windows\StanimirSofronov08.04.2023.exe
+C:\Diplomna\Diplomna-rabota\StanimirSofronov08.04.2023\StanimirSofronov08.04.2023\bin\Debug\net6.0-windows\StanimirSofronov08.04.2023.deps.json
+C:\Diplomna\Diplomna-rabota\StanimirSofronov08.04.2023\StanimirSofronov08.04.2023\bin\Debug\net6.0-windows\StanimirSofronov08.04.2023.runtimeconfig.json
+C:\Diplomna\Diplomna-rabota\StanimirSofronov08.04.2023\StanimirSofronov08.04.2023\bin\Debug\net6.0-windows\StanimirSofronov08.04.2023.dll
+C:\Diplomna\Diplomna-rabota\StanimirSofronov08.04.2023\StanimirSofronov08.04.2023\bin\Debug\net6.0-windows\StanimirSofronov08.04.2023.pdb
 C:\Diplomna\Diplomna-rabota\StanimirSofronov08.04.2023\StanimirSofronov08.04.2023\bin\Debug\net6.0-windows\Microsoft.Data.SqlClient.dll
 C:\Diplomna\Diplomna-rabota\StanimirSofronov08.04.2023\StanimirSofronov08.04.2023\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.dll
 C:\Diplomna\Diplomna-rabota\StanimirSofronov08.04.2023\StanimirSofronov08.04.2023\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
@@ -36,9 +40,6 @@ C:\Diplomna\Diplomna-rabota\StanimirSofronov08.04.2023\StanimirSofronov08.04.202
 C:\Diplomna\Diplomna-rabota\StanimirSofronov08.04.2023\StanimirSofronov08.04.2023\obj\Debug\net6.0-windows\StanimirSofronov08.04.2023.csproj.AssemblyReference.cache
 C:\Diplomna\Diplomna-rabota\StanimirSofronov08.04.2023\StanimirSofronov08.04.2023\obj\Debug\net6.0-windows\StanimirSofronov08._04._2023.addEmployee.resources
 C:\Diplomna\Diplomna-rabota\StanimirSofronov08.04.2023\StanimirSofronov08.04.2023\obj\Debug\net6.0-windows\StanimirSofronov08._04._2023.DeleteUser.resources
-C:\Diplomna\Diplomna-rabota\StanimirSofronov08.04.2023\StanimirSofronov08.04.2023\obj\Debug\net6.0-windows\StanimirSofronov08._04._2023.Form1.resources
-C:\Diplomna\Diplomna-rabota\StanimirSofronov08.04.2023\StanimirSofronov08.04.2023\obj\Debug\net6.0-windows\StanimirSofronov08._04._2023.Form2.resources
-C:\Diplomna\Diplomna-rabota\StanimirSofronov08.04.2023\StanimirSofronov08.04.2023\obj\Debug\net6.0-windows\StanimirSofronov08._04._2023.Form3.resources
 C:\Diplomna\Diplomna-rabota\StanimirSofronov08.04.2023\StanimirSofronov08.04.2023\obj\Debug\net6.0-windows\StanimirSofronov08._04._2023.Properties.Resources.resources
 C:\Diplomna\Diplomna-rabota\StanimirSofronov08.04.2023\StanimirSofronov08.04.2023\obj\Debug\net6.0-windows\StanimirSofronov08._04._2023.ReportsForm.resources
 C:\Diplomna\Diplomna-rabota\StanimirSofronov08.04.2023\StanimirSofronov08.04.2023\obj\Debug\net6.0-windows\StanimirSofronov08.04.2023.csproj.GenerateResource.cache
@@ -50,9 +51,8 @@ C:\Diplomna\Diplomna-rabota\StanimirSofronov08.04.2023\StanimirSofronov08.04.202
 C:\Diplomna\Diplomna-rabota\StanimirSofronov08.04.2023\StanimirSofronov08.04.2023\obj\Debug\net6.0-windows\StanimirSofronov08.04.2023.dll
 C:\Diplomna\Diplomna-rabota\StanimirSofronov08.04.2023\StanimirSofronov08.04.2023\obj\Debug\net6.0-windows\refint\StanimirSofronov08.04.2023.dll
 C:\Diplomna\Diplomna-rabota\StanimirSofronov08.04.2023\StanimirSofronov08.04.2023\obj\Debug\net6.0-windows\StanimirSofronov08.04.2023.pdb
-C:\Diplomna\Diplomna-rabota\StanimirSofronov08.04.2023\StanimirSofronov08.04.2023\bin\Debug\net6.0-windows\StanimirSofronov08.04.2023.deps.json
-C:\Diplomna\Diplomna-rabota\StanimirSofronov08.04.2023\StanimirSofronov08.04.2023\bin\Debug\net6.0-windows\StanimirSofronov08.04.2023.runtimeconfig.json
-C:\Diplomna\Diplomna-rabota\StanimirSofronov08.04.2023\StanimirSofronov08.04.2023\bin\Debug\net6.0-windows\StanimirSofronov08.04.2023.dll
-C:\Diplomna\Diplomna-rabota\StanimirSofronov08.04.2023\StanimirSofronov08.04.2023\bin\Debug\net6.0-windows\StanimirSofronov08.04.2023.pdb
 C:\Diplomna\Diplomna-rabota\StanimirSofronov08.04.2023\StanimirSofronov08.04.2023\obj\Debug\net6.0-windows\StanimirSofronov08.04.2023.genruntimeconfig.cache
 C:\Diplomna\Diplomna-rabota\StanimirSofronov08.04.2023\StanimirSofronov08.04.2023\obj\Debug\net6.0-windows\ref\StanimirSofronov08.04.2023.dll
+C:\Diplomna\Diplomna-rabota\StanimirSofronov08.04.2023\StanimirSofronov08.04.2023\obj\Debug\net6.0-windows\StanimirSofronov08._04._2023.SignInForm.resources
+C:\Diplomna\Diplomna-rabota\StanimirSofronov08.04.2023\StanimirSofronov08.04.2023\obj\Debug\net6.0-windows\StanimirSofronov08._04._2023.MenuForm.resources
+C:\Diplomna\Diplomna-rabota\StanimirSofronov08.04.2023\StanimirSofronov08.04.2023\obj\Debug\net6.0-windows\StanimirSofronov08._04._2023.ReservationForm.resources

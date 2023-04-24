@@ -1,6 +1,6 @@
 ﻿namespace StanimirSofronov08._04._2023
 {
-    partial class Form2
+    partial class ReservationForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReservationForm));
             panel1 = new Panel();
             FirstTableSecondShiftBox = new ComboBox();
             FirstTableFirstShiftBox = new ComboBox();
