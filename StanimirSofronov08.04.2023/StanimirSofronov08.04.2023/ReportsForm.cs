@@ -1,4 +1,5 @@
-﻿using DataLayer;
+﻿using BusinessLayer.Models;
+using DataLayer;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,8 @@ namespace StanimirSofronov08._04._2023
     {
         private RestaurantContext _context;
         private string selectedUsername;
+        private const int HoursPerShift = 8;
+        private const int MaxHoursPerMonth = 160;
 
         public ReportsForm()
         {
@@ -71,20 +74,35 @@ namespace StanimirSofronov08._04._2023
             var user = _context.Users.First(u => u.UserName == selectedUsername);
             var from = dateTimePickerFrom.Value.Month;
             var to= dateTimePickerTo.Value.Month;
+            var monthsCount = (to - from) + 1;
+            var filteredFinal = new List<TableShift>();
 
-            
-            var filtered = _context.TableShifts.Include(ts => ts.Shift)
+            var filteredByUser = _context.TableShifts.Include(ts => ts.Shift)
                 .Where(ts => ts.UserId == user.UserId &&
                              ts.ShiftDate.Date.Month >= from &&
                              ts.ShiftDate.Date.Month <= to).ToList();
 
-            var result = filtered.Select(x =>
-            $"- {x.ShiftDate.Date} | {x.TableId} | {x.Shift.Description} | {x.Shift.Payrate * 6} | {x.Late.ToString()} | {x.MissedShift} "
-            ).ToArray();
-
             listBoxResult.Items.Clear();
             listBoxResult.Items.Add("   Месец | Взети смени | Взети часове  | Извънреден труд ");
-            listBoxResult.Items.AddRange(result);
+
+            for (int i = 0; i < monthsCount; i++)
+            {
+                var filteredByMonth = filteredByUser.Where(x => x.ShiftDate.Date.Month == to + i);
+                var shifts = filteredByMonth.Count();
+                var hours = shifts * HoursPerShift;
+                var overtime = 0;
+                if (hours > MaxHoursPerMonth) { overtime = hours - MaxHoursPerMonth; }
+                listBoxResult.Items.Add($"- {to + i}  |  {shifts}  |  {hours}  |  {overtime}");
+            }
+
+
+            //var result = filteredFinal.Select(x =>
+            //$"- {x.ShiftDate.Date} | {x.TableId} | {x.Shift.Description} | {x.Shift.Payrate * 6} | {x.Late.ToString()} | {x.MissedShift} "
+            //).ToArray();
+
+            //listBoxResult.Items.Clear();
+            //listBoxResult.Items.Add("   Месец | Взети смени | Взети часове  | Извънреден труд ");
+            //listBoxResult.Items.AddRange(result);
         }
     }
 }
