@@ -56,7 +56,7 @@ namespace StanimirSofronov08._04._2023
                              ts.ShiftDate.Date <= dateTimePickerTo.Value.Date).ToList();
 
             var result = filtered.Select(x =>
-            $"- {x.ShiftDate.Date} | {x.TableId} | {x.Shift.Description} | {x.Shift.Payrate * 6} | {x.Late.ToString()} | {x.MissedShift} "
+            $"- {x.ShiftDate.Date} | {x.TableId} | {x.Shift.Description} | {x.Shift.Payrate * 8} | {x.Late.ToString()} | {x.MissedShift} "
             ).ToArray();
 
             listBoxResult.Items.Clear();
@@ -84,6 +84,7 @@ namespace StanimirSofronov08._04._2023
 
             listBoxResult.Items.Clear();
             listBoxResult.Items.Add("   Месец | Взети смени | Взети часове  | Извънреден труд ");
+            //ТоDo:Да се добави изчисление за заплата за месеца
 
             for (int i = 0; i < monthsCount; i++)
             {
