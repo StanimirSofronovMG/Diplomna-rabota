@@ -73,7 +73,7 @@ namespace StanimirSofronov08._04._2023
         {
             var user = _context.Users.First(u => u.UserName == selectedUsername);
             var from = dateTimePickerFrom.Value.Month;
-            var to= dateTimePickerTo.Value.Month;
+            var to = dateTimePickerTo.Value.Month;
             var monthsCount = (to - from) + 1;
             var filteredFinal = new List<TableShift>();
 
@@ -87,12 +87,12 @@ namespace StanimirSofronov08._04._2023
 
             for (int i = 0; i < monthsCount; i++)
             {
-                var filteredByMonth = filteredByUser.Where(x => x.ShiftDate.Date.Month == to + i);
+                var filteredByMonth = filteredByUser.Where(x => x.ShiftDate.Date.Month == from + i);
                 var shifts = filteredByMonth.Count();
                 var hours = shifts * HoursPerShift;
                 var overtime = 0;
                 if (hours > MaxHoursPerMonth) { overtime = hours - MaxHoursPerMonth; }
-                listBoxResult.Items.Add($"- {to + i}  |  {shifts}  |  {hours}  |  {overtime}");
+                listBoxResult.Items.Add($" {from + i}  |  {shifts}  |  {hours}  |  {overtime}");
             }
 
 

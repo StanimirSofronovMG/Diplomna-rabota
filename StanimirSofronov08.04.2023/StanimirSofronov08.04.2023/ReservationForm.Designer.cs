@@ -44,6 +44,7 @@
             MenuButton = new Button();
             isLateBox = new ComboBox();
             label1 = new Label();
+            missingShift = new ComboBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
@@ -209,11 +210,21 @@
             label1.TabIndex = 7;
             label1.Text = "Днес на смяна са";
             // 
-            // Form2
+            // missingShift
+            // 
+            missingShift.FormattingEnabled = true;
+            missingShift.Location = new Point(693, 116);
+            missingShift.Name = "missingShift";
+            missingShift.Size = new Size(125, 23);
+            missingShift.TabIndex = 8;
+            missingShift.Text = "Пропусната смяна";
+            // 
+            // ReservationForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(895, 530);
+            ClientSize = new Size(891, 433);
+            Controls.Add(missingShift);
             Controls.Add(label1);
             Controls.Add(isLateBox);
             Controls.Add(MenuButton);
@@ -221,7 +232,7 @@
             Controls.Add(ExitButton);
             Controls.Add(dateTimePicker1);
             Controls.Add(panel1);
-            Name = "Form2";
+            Name = "ReservationForm";
             Text = "Резервации";
             Load += Form2_Load;
             panel1.ResumeLayout(false);
@@ -252,5 +263,6 @@
         private Button MenuButton;
         private ComboBox isLateBox;
         private Label label1;
+        private ComboBox missingShift;
     }
 }

@@ -120,9 +120,9 @@
             // 
             // btnTotalHours
             // 
-            btnTotalHours.Location = new Point(384, 19);
+            btnTotalHours.Location = new Point(387, 20);
             btnTotalHours.Name = "btnTotalHours";
-            btnTotalHours.Size = new Size(180, 50);
+            btnTotalHours.Size = new Size(180, 61);
             btnTotalHours.TabIndex = 8;
             btnTotalHours.Text = "GetTotalHours";
             btnTotalHours.UseVisualStyleBackColor = true;
