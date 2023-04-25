@@ -19,6 +19,7 @@ namespace StanimirSofronov08._04._2023
         private string selectedUsername;
         private const int HoursPerShift = 8;
         private const int MaxHoursPerMonth = 160;
+        private const double ShiftPayrate = 5;
 
         public ReportsForm()
         {
@@ -83,8 +84,7 @@ namespace StanimirSofronov08._04._2023
                              ts.ShiftDate.Date.Month <= to).ToList();
 
             listBoxResult.Items.Clear();
-            listBoxResult.Items.Add("   Месец | Взети смени | Взети часове  | Извънреден труд ");
-            //ТоDo:Да се добави изчисление за заплата за месеца
+            listBoxResult.Items.Add("   Месец | Взети смени | Взети часове  | Извънреден труд |  Възнаграждение");
 
             for (int i = 0; i < monthsCount; i++)
             {
@@ -92,18 +92,10 @@ namespace StanimirSofronov08._04._2023
                 var shifts = filteredByMonth.Count();
                 var hours = shifts * HoursPerShift;
                 var overtime = 0;
+                var payrate = ((hours - overtime) * ShiftPayrate) + (overtime * ShiftPayrate * 2);
                 if (hours > MaxHoursPerMonth) { overtime = hours - MaxHoursPerMonth; }
-                listBoxResult.Items.Add($" {from + i}  |  {shifts}  |  {hours}  |  {overtime}");
+                listBoxResult.Items.Add($" {from + i}  |  {shifts}  |  {hours}  |  {overtime}  |  {payrate}");
             }
-
-
-            //var result = filteredFinal.Select(x =>
-            //$"- {x.ShiftDate.Date} | {x.TableId} | {x.Shift.Description} | {x.Shift.Payrate * 6} | {x.Late.ToString()} | {x.MissedShift} "
-            //).ToArray();
-
-            //listBoxResult.Items.Clear();
-            //listBoxResult.Items.Add("   Месец | Взети смени | Взети часове  | Извънреден труд ");
-            //listBoxResult.Items.AddRange(result);
         }
     }
 }

@@ -17,7 +17,8 @@ namespace BusinessLayer.Models
         public int UserId { get; set; }
 
         public User User { get; set; }
-      //ToDo  public bool IsPaidLeave { get; set; }
+        
+        public bool IsPaidLeave { get; set; }
 
         public DateTime StartDate { get; set; }
 

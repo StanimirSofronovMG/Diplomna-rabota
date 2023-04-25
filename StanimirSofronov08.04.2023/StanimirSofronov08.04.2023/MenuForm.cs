@@ -71,7 +71,12 @@ namespace StanimirSofronov08._04._2023
         private void премахванеНаПотребителToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new DeleteUser().Show();
-           
+
+        }
+
+        private void vacation_Click(object sender, EventArgs e)
+        {
+            new VacationForm().Show();
         }
     }
 }
